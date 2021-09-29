@@ -198,7 +198,7 @@ public class HtmlValidatorTest {
 	}
 
 	/**
-	 * This test removes the b tags from the list
+	 * This test removes the l tags from the list
 	 */
 	@Test
 	public void myRemoveAllTest1(){
@@ -219,7 +219,7 @@ public class HtmlValidatorTest {
 	}
 
 	/**
-	 * This test removes the p tag from the list
+	 * This test removes the w tag from the list
 	 */
 	@Test
 	public void myRemoveAllTest2(){
@@ -241,7 +241,7 @@ public class HtmlValidatorTest {
 	}
 
 	/**
-	 * This test removes the r tags from the list
+	 * This test removes the t tags from the list
 	 */
 	@Test
 	public void myRemoveAllTest3(){
