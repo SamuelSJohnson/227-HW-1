@@ -1,8 +1,10 @@
 import java.util.*;
 
 /**
- * Add your own comments
+ * This project was worked on with Nathan, Tyler, and Jacob
+ * This class creates methods that the ValidatorMain and test can run to validate html tags
  */
+
 public class HtmlValidator {
     private static final String INDENTATION_MARKER = "    ";
 
@@ -52,11 +54,6 @@ public class HtmlValidator {
      * @param element the type of tag to remove
      */
     public void removeAll(String element) {
-        if (element == null) throw new IllegalArgumentException();
-        tags.removeIf(tag -> tag.getElement().equalsIgnoreCase(element));
-        /*
-        Or, more simply for 227...
-
         Queue<HtmlTag> filteredTags = new LinkedList<>();
         for (HtmlTag tag : tags) {
             if (!tag.getElement().equalsIgnoreCase(element)) {
@@ -64,7 +61,6 @@ public class HtmlValidator {
             }
         }
         tags = filteredTags;
-        */
     }
 
     /**
@@ -75,13 +71,15 @@ public class HtmlValidator {
     public void validate() {
         Stack<HtmlTag> openTags = new Stack<>();
         for(int i = 0; i < tags.size(); i++) {
-            // for(HtmlTag tag : tags){ is NOT allowed by the spec
-            // Because we can't use a foreach loop :l
             HtmlTag tag = tags.remove();
             tags.add(tag);
 
             if (tag.isSelfClosing()) {
-                printWithIndentation(tag, openTags.size());
+                if (tag.toString().startsWith("</")) {
+                    System.out.println("ERROR unexpected tag: " + tag.toString());
+                } else {
+                    printWithIndentation(tag, openTags.size());
+                }
             } else if (tag.isOpenTag()) {
                 printWithIndentation(tag, openTags.size());
                 openTags.push(tag);
