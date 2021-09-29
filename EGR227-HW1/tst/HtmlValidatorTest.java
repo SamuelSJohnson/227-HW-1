@@ -203,19 +203,19 @@ public class HtmlValidatorTest {
 	@Test
 	public void myRemoveAllTest1(){
         Queue<HtmlTag> tags = new LinkedList<>();
-        tags.add(new HtmlTag("b"));
-        tags.add(new HtmlTag("r"));
-        tags.add(new HtmlTag("b"));
-        tags.add(new HtmlTag("r"));
-        tags.add(new HtmlTag("b"));
+        tags.add(new HtmlTag("i"));
+        tags.add(new HtmlTag("l"));
+        tags.add(new HtmlTag("m"));
+        tags.add(new HtmlTag("l"));
+        tags.add(new HtmlTag("l"));
 
         Queue<HtmlTag> newTags = new LinkedList<>();
         for (HtmlTag tag : tags) {
-            if (!tag.getElement().equalsIgnoreCase("b")) {
+            if (!tag.getElement().equalsIgnoreCase("l")) {
                 newTags.add(tag);
             }
         }
-        Assert.assertEquals("[<r>, <r>]", newTags.toString());
+        Assert.assertEquals("[<i>, <m>]", newTags.toString());
 	}
 
 	/**
@@ -224,20 +224,20 @@ public class HtmlValidatorTest {
 	@Test
 	public void myRemoveAllTest2(){
 	    Queue<HtmlTag> tags = new LinkedList<>();
-	    tags.add(new HtmlTag("p"));
-	    tags.add(new HtmlTag("b"));
-	    tags.add(new HtmlTag("r"));
-	    tags.add(new HtmlTag("b"));
-	    tags.add(new HtmlTag("r"));
-	    tags.add(new HtmlTag("b"));
+	    tags.add(new HtmlTag("w"));
+	    tags.add(new HtmlTag("n"));
+	    tags.add(new HtmlTag("m"));
+	    tags.add(new HtmlTag("n"));
+	    tags.add(new HtmlTag("m"));
+	    tags.add(new HtmlTag("n"));
 
 	    Queue<HtmlTag> newTags = new LinkedList<>();
 	    for (HtmlTag tag : tags) {
-	        if (!tag.getElement().equalsIgnoreCase("p")) {
+	        if (!tag.getElement().equalsIgnoreCase("w")) {
 	            newTags.add(tag);
             }
         }
-	    Assert.assertEquals("[<b>, <r>, <b>, <r>, <b>]", newTags.toString());
+	    Assert.assertEquals("[<n>, <m>, <n>, <m>, <n>]", newTags.toString());
 	}
 
 	/**
@@ -246,20 +246,20 @@ public class HtmlValidatorTest {
 	@Test
 	public void myRemoveAllTest3(){
         Queue<HtmlTag> tags = new LinkedList<>();
-        tags.add(new HtmlTag("p"));
-        tags.add(new HtmlTag("b"));
-        tags.add(new HtmlTag("r"));
-        tags.add(new HtmlTag("b"));
-        tags.add(new HtmlTag("r"));
-        tags.add(new HtmlTag("b"));
+        tags.add(new HtmlTag("u"));
+        tags.add(new HtmlTag("j"));
+        tags.add(new HtmlTag("t"));
+        tags.add(new HtmlTag("j"));
+        tags.add(new HtmlTag("t"));
+        tags.add(new HtmlTag("j"));
 
         Queue<HtmlTag> newTags = new LinkedList<>();
         for (HtmlTag tag : tags) {
-            if (!tag.getElement().equalsIgnoreCase("r")) {
+            if (!tag.getElement().equalsIgnoreCase("t")) {
                 newTags.add(tag);
             }
         }
-        Assert.assertEquals("[<p>, <b>, <b>, <b>]", newTags.toString());
+        Assert.assertEquals("[<u>, <j>, <j>, <j>]", newTags.toString());
 	}
 
     /**
@@ -269,11 +269,11 @@ public class HtmlValidatorTest {
     public void myRemoveAllTest4(){
         Queue<HtmlTag> tags = new LinkedList<>();
         tags.add(new HtmlTag("Html"));
-        tags.add(new HtmlTag("b"));
-        tags.add(new HtmlTag("r"));
-        tags.add(new HtmlTag("b"));
-        tags.add(new HtmlTag("r"));
-        tags.add(new HtmlTag("b"));
+        tags.add(new HtmlTag("s"));
+        tags.add(new HtmlTag("i"));
+        tags.add(new HtmlTag("s"));
+        tags.add(new HtmlTag("i"));
+        tags.add(new HtmlTag("k"));
 
         Queue<HtmlTag> newTags = new LinkedList<>();
         for (HtmlTag tag : tags) {
@@ -281,7 +281,7 @@ public class HtmlValidatorTest {
                 newTags.add(tag);
             }
         }
-        Assert.assertEquals("[<b>, <r>, <b>, <r>, <b>]", newTags.toString());
+        Assert.assertEquals("[<s>, <i>, <s>, <i>, <k>]", newTags.toString());
     }
 
 }
